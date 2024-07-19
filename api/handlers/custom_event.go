@@ -37,6 +37,7 @@ func NewCustomEventHandler(kafkaProducer *kafka.Producer, grpcConn *grpc.ClientC
 // @Accept      json
 // @Produce     json
 // @Param       customEvent body     models.CreateCustomEventModel true "Custom Event details"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -67,6 +68,7 @@ func (h *CustomEventHandler) CreateCustomEvent(c *gin.Context) {
 // @Accept      json
 // @Produce     json
 // @Param       id   path     string true "Custom Event ID"
+// @Security    ApiKeyAuth
 // @Success     200     {object} timeline.CustomEvent
 // @Failure     400     {object} map[string]interface{}
 // @Failure     404     {object} map[string]interface{}
@@ -101,6 +103,7 @@ func (h *CustomEventHandler) GetCustomEvent(c *gin.Context) {
 // @Produce     json
 // @Param       id     path     string                  true "Custom Event ID"
 // @Param       customEvent body     models.UpdateCustomEventModel true "Updated custom event data"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -136,6 +139,7 @@ func (h *CustomEventHandler) UpdateCustomEvent(c *gin.Context) {
 // @Produce     json
 // @Param       id     path     string                  true "Custom Event ID"
 // @Param       customEvent body     models.PatchCustomEventModel true "Patched custom event data"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -167,6 +171,7 @@ func (h *CustomEventHandler) PatchCustomEvent(c *gin.Context) {
 // @Accept      json
 // @Produce     json
 // @Param       id   path     string true "Custom Event ID"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -197,6 +202,7 @@ func (h *CustomEventHandler) DeleteCustomEvent(c *gin.Context) {
 // @Param        category query    string false  "Filter by category"
 // @Param        start_date query string false  "Filter by start date (YYYY-MM-DD)"
 // @Param        end_date   query string false  "Filter by end date (YYYY-MM-DD)"
+// @Security    ApiKeyAuth
 // @Success     200     {object} timeline.GetAllCustomEventsResponse
 // @Failure     500     {object} map[string]interface{}
 // @Router      /v1/custom-events [get]

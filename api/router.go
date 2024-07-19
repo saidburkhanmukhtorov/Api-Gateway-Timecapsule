@@ -4,12 +4,22 @@ import (
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
+	"github.com/time_capsule/Api-Gateway-Timecapsule/api/auth"
 	_ "github.com/time_capsule/Api-Gateway-Timecapsule/api/docs"
 	"github.com/time_capsule/Api-Gateway-Timecapsule/api/handlers"
 	"github.com/time_capsule/Api-Gateway-Timecapsule/config"
 	"google.golang.org/grpc"
 )
 
+// @title           Swagger Example API
+// @version         1.0
+// @description     This is a sample server celler server.
+// @termsOfService  http://swagger.io/terms/
+// @securityDefinitions.apikey  ApiKeyAuth
+// @in                          header
+// @name                        Authorization
+// @BasePath  /v1
+// @description					Description for what is this security definition being used
 func NewRouter(timelineGrpcConn, memoryGrpcConn *grpc.ClientConn) *gin.Engine {
 	cfg := config.Load()
 	router := gin.Default()
@@ -21,6 +31,8 @@ func NewRouter(timelineGrpcConn, memoryGrpcConn *grpc.ClientConn) *gin.Engine {
 
 	// API versioning
 	v1 := router.Group("/v1")
+	v1.Use(auth.AuthMiddleware(&cfg))
+	v1.Use(auth.AuthorizationMiddleware())
 	{
 		// Milestone routes
 		milestones := v1.Group("/milestones")

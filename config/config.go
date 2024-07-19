@@ -22,6 +22,10 @@ type Config struct {
 	KafkaHistoricalEventTopic string
 	KafkaMediaTopic           string
 
+	// JWT
+	JWTSecretKey string
+	JWTExpiry    int
+
 	LOG_PATH        string
 	TimelineSvcAddr string
 	MemorySvcAddr   string
@@ -49,6 +53,10 @@ func Load() Config {
 	config.KafkaMediaTopic = cast.ToString(coalesce("KAFKA_MEDIA_TOPIC", "media_topic"))
 
 	config.LOG_PATH = cast.ToString(coalesce("LOG_PATH", "logs/info.log"))
+
+	// JWT Configuration
+	config.JWTSecretKey = cast.ToString(coalesce("JWT_SECRET_KEY", "your_secret_key"))
+	config.JWTExpiry = cast.ToInt(coalesce("JWT_EXPIRY", 60))
 
 	config.TimelineSvcAddr = cast.ToString(coalesce("TIME_LINE_SERVICE_port", "timeline:9091"))
 	config.MemorySvcAddr = cast.ToString(coalesce("MEMORY_SERVICE_port", "memory:9090"))

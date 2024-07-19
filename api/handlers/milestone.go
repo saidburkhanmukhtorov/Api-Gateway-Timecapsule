@@ -36,6 +36,7 @@ func NewMilestoneHandler(kafkaProducer *kafka.Producer, grpcConn *grpc.ClientCon
 // @Accept      json
 // @Produce     json
 // @Param       milestone body     models.CreateMilestoneModel true "Milestone details"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -63,6 +64,7 @@ func (h *MilestoneHandler) CreateMilestone(c *gin.Context) {
 // @Accept      json
 // @Produce     json
 // @Param       id   path     string true "Milestone ID"
+// @Security    ApiKeyAuth
 // @Success     200     {object} timeline.Milestone
 // @Failure     400     {object} map[string]interface{}
 // @Failure     404     {object} map[string]interface{}
@@ -97,6 +99,7 @@ func (h *MilestoneHandler) GetMilestone(c *gin.Context) {
 // @Produce     json
 // @Param       id     path     string                  true "Milestone ID"
 // @Param       milestone body     models.UpdateMilestoneModel true "Updated milestone data"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -132,6 +135,7 @@ func (h *MilestoneHandler) UpdateMilestone(c *gin.Context) {
 // @Produce     json
 // @Param       id     path     string                  true "Milestone ID"
 // @Param       milestone body     models.PatchMilestoneModel true "Patched milestone data"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -163,6 +167,7 @@ func (h *MilestoneHandler) PatchMilestone(c *gin.Context) {
 // @Accept      json
 // @Produce     json
 // @Param       id   path     string true "Milestone ID"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -192,6 +197,7 @@ func (h *MilestoneHandler) DeleteMilestone(c *gin.Context) {
 // @Param        category query    string false  "Filter by category"
 // @Param        start_date query string false  "Filter by start date (YYYY-MM-DD)"
 // @Param        end_date   query string false  "Filter by end date (YYYY-MM-DD)"
+// @Security    ApiKeyAuth
 // @Success     200     {object} timeline.GetAllMilestonesResponse
 // @Failure     500     {object} map[string]interface{}
 // @Router      /v1/milestones [get]

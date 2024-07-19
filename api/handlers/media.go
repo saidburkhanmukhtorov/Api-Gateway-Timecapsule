@@ -36,6 +36,7 @@ func NewMediaHandler(kafkaProducer *kafka.Producer, grpcConn *grpc.ClientConn) *
 // @Accept      json
 // @Produce     json
 // @Param       media body     models.CreateMediaModel true "Media details"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -66,6 +67,7 @@ func (h *MediaHandler) CreateMedia(c *gin.Context) {
 // @Accept      json
 // @Produce     json
 // @Param       id   path     string true "Media ID"
+// @Security    ApiKeyAuth
 // @Success     200     {object} memory.Media
 // @Failure     400     {object} map[string]interface{}
 // @Failure     404     {object} map[string]interface{}
@@ -100,6 +102,7 @@ func (h *MediaHandler) GetMedia(c *gin.Context) {
 // @Produce     json
 // @Param       id     path     string                  true "Media ID"
 // @Param       media body     models.UpdateMediaModel true "Updated media data"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -135,6 +138,7 @@ func (h *MediaHandler) UpdateMedia(c *gin.Context) {
 // @Produce     json
 // @Param       id     path     string                  true "Media ID"
 // @Param       media body     models.PatchMediaModel true "Patched media data"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -166,6 +170,7 @@ func (h *MediaHandler) PatchMedia(c *gin.Context) {
 // @Accept      json
 // @Produce     json
 // @Param       id   path     string true "Media ID"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -192,6 +197,7 @@ func (h *MediaHandler) DeleteMedia(c *gin.Context) {
 // @Param        limit    query    int    false  "Number of items per page"  minimum(1)
 // @Param        memory_id query    string false  "Filter by memory ID"
 // @Param        types    query    string false  "Filter by media types (comma-separated)"
+// @Security    ApiKeyAuth
 // @Success     200     {object} memory.GetAllMediaResponse
 // @Failure     500     {object} map[string]interface{}
 // @Router      /v1/media [get]

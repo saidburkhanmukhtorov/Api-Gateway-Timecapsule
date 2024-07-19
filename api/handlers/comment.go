@@ -36,6 +36,7 @@ func NewCommentHandler(kafkaProducer *kafka.Producer, grpcConn *grpc.ClientConn)
 // @Accept      json
 // @Produce     json
 // @Param       comment body     models.CreateCommentModel true "Comment details"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -63,6 +64,7 @@ func (h *CommentHandler) CreateComment(c *gin.Context) {
 // @Accept      json
 // @Produce     json
 // @Param       id   path     string true "Comment ID"
+// @Security    ApiKeyAuth
 // @Success     200     {object} memory.Comment
 // @Failure     400     {object} map[string]interface{}
 // @Failure     404     {object} map[string]interface{}
@@ -97,6 +99,7 @@ func (h *CommentHandler) GetComment(c *gin.Context) {
 // @Produce     json
 // @Param       id     path     string                  true "Comment ID"
 // @Param       comment body     models.UpdateCommentModel true "Updated comment data"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -132,6 +135,7 @@ func (h *CommentHandler) UpdateComment(c *gin.Context) {
 // @Produce     json
 // @Param       id     path     string                  true "Comment ID"
 // @Param       comment body     models.PatchCommentModel true "Patched comment data"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -163,6 +167,7 @@ func (h *CommentHandler) PatchComment(c *gin.Context) {
 // @Accept      json
 // @Produce     json
 // @Param       id   path     string true "Comment ID"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -190,6 +195,7 @@ func (h *CommentHandler) DeleteComment(c *gin.Context) {
 // @Param        memory_id query    string false  "Filter by memory ID"
 // @Param        user_id  query    string false  "Filter by user ID"
 // @Param        content  query    string false  "Filter by content"
+// @Security    ApiKeyAuth
 // @Success     200     {object} memory.GetAllCommentsResponse
 // @Failure     500     {object} map[string]interface{}
 // @Router      /v1/comments [get]

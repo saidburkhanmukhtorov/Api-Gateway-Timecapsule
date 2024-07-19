@@ -455,6 +455,10 @@ definitions:
     type: object
 info:
   contact: {}
+  description: This is a sample server celler server.
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
 paths:
   /v1/comments:
     get:
@@ -496,6 +500,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: List Comments
       tags:
       - Comments
@@ -528,6 +534,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Create a new Comment
       tags:
       - Comments
@@ -560,6 +568,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Delete Comment
       tags:
       - Comments
@@ -595,6 +605,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Get Comment by ID
       tags:
       - Comments
@@ -632,6 +644,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Partially update Comment
       tags:
       - Comments
@@ -669,6 +683,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Update Comment
       tags:
       - Comments
@@ -724,6 +740,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: List Custom Events
       tags:
       - CustomEvents
@@ -756,6 +774,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Create a new Custom Event
       tags:
       - CustomEvents
@@ -788,6 +808,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Delete Custom Event
       tags:
       - CustomEvents
@@ -823,6 +845,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Get Custom Event by ID
       tags:
       - CustomEvents
@@ -860,6 +884,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Partially update Custom Event
       tags:
       - CustomEvents
@@ -897,6 +923,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Update Custom Event
       tags:
       - CustomEvents
@@ -944,6 +972,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: List Historical Events
       tags:
       - HistoricalEvents
@@ -976,6 +1006,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Create a new Historical Event
       tags:
       - HistoricalEvents
@@ -1008,6 +1040,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Delete Historical Event
       tags:
       - HistoricalEvents
@@ -1043,6 +1077,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Get Historical Event by ID
       tags:
       - HistoricalEvents
@@ -1080,6 +1116,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Partially update Historical Event
       tags:
       - HistoricalEvents
@@ -1117,6 +1155,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Update Historical Event
       tags:
       - HistoricalEvents
@@ -1156,6 +1196,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: List Media
       tags:
       - Media
@@ -1188,6 +1230,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Create new Media
       tags:
       - Media
@@ -1220,6 +1264,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Delete Media
       tags:
       - Media
@@ -1255,6 +1301,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Get Media by ID
       tags:
       - Media
@@ -1292,6 +1340,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Partially update Media
       tags:
       - Media
@@ -1329,6 +1379,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Update Media
       tags:
       - Media
@@ -1404,6 +1456,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: List Memories
       tags:
       - Memories
@@ -1436,6 +1490,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Create a new Memory
       tags:
       - Memories
@@ -1468,6 +1524,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Delete Memory
       tags:
       - Memories
@@ -1503,6 +1561,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Get Memory by ID
       tags:
       - Memories
@@ -1540,6 +1600,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Partially update Memory
       tags:
       - Memories
@@ -1577,6 +1639,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Update Memory
       tags:
       - Memories
@@ -1628,6 +1692,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: List Milestones
       tags:
       - Milestones
@@ -1660,6 +1726,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Create a new Milestone
       tags:
       - Milestones
@@ -1692,6 +1760,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Delete Milestone
       tags:
       - Milestones
@@ -1727,6 +1797,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Get Milestone by ID
       tags:
       - Milestones
@@ -1764,6 +1836,8 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Partially update Milestone
       tags:
       - Milestones
@@ -1801,7 +1875,15 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - ApiKeyAuth: []
       summary: Update Milestone
       tags:
       - Milestones
+securityDefinitions:
+  ApiKeyAuth:
+    description: Description for what is this security definition being used
+    in: header
+    name: Authorization
+    type: apiKey
 swagger: "2.0"

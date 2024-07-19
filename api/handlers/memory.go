@@ -39,6 +39,7 @@ func NewMemoryHandler(kafkaProducer *kafka.Producer, grpcConn *grpc.ClientConn) 
 // @Accept      json
 // @Produce     json
 // @Param       memory body     models.CreateMemoryModel true "Memory details"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -69,6 +70,7 @@ func (h *MemoryHandler) CreateMemory(c *gin.Context) {
 // @Accept      json
 // @Produce     json
 // @Param       id   path     string true "Memory ID"
+// @Security    ApiKeyAuth
 // @Success     200     {object} memory.Memory
 // @Failure     400     {object} map[string]interface{}
 // @Failure     404     {object} map[string]interface{}
@@ -103,6 +105,7 @@ func (h *MemoryHandler) GetMemory(c *gin.Context) {
 // @Produce     json
 // @Param       id     path     string                  true "Memory ID"
 // @Param       memory body     models.UpdateMemoryModel true "Updated memory data"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -138,6 +141,7 @@ func (h *MemoryHandler) UpdateMemory(c *gin.Context) {
 // @Produce     json
 // @Param       id     path     string                  true "Memory ID"
 // @Param       memory body     models.PatchMemoryModel true "Patched memory data"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -169,6 +173,7 @@ func (h *MemoryHandler) PatchMemory(c *gin.Context) {
 // @Accept      json
 // @Produce     json
 // @Param       id   path     string true "Memory ID"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -204,6 +209,7 @@ func (h *MemoryHandler) DeleteMemory(c *gin.Context) {
 // @Param        longitude    query    float64 false  "Filter by longitude"
 // @Param        place_name   query    string  false  "Filter by place name"
 // @Param        privacy      query    string  false  "Filter by privacy setting"
+// @Security    ApiKeyAuth
 // @Success     200     {object} memory.GetAllMemoriesResponse
 // @Failure     500     {object} map[string]interface{}
 // @Router      /v1/memories [get]

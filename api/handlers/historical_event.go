@@ -37,6 +37,7 @@ func NewHistoricalEventHandler(kafkaProducer *kafka.Producer, grpcConn *grpc.Cli
 // @Accept      json
 // @Produce     json
 // @Param       historicalEvent body     models.CreateHistoricalEventModel true "Historical Event details"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -69,6 +70,7 @@ func (h *HistoricalEventHandler) CreateHistoricalEvent(c *gin.Context) {
 // @Accept      json
 // @Produce     json
 // @Param       id   path     string true "Historical Event ID"
+// @Security    ApiKeyAuth
 // @Success     200     {object} timeline.HistoricalEvent
 // @Failure     400     {object} map[string]interface{}
 // @Failure     404     {object} map[string]interface{}
@@ -106,6 +108,7 @@ func (h *HistoricalEventHandler) GetHistoricalEvent(c *gin.Context) {
 // @Produce     json
 // @Param       id     path     string   true "Historical Event ID"
 // @Param       historicalEvent body     models.UpdateHistoricalEventModel true "Updated historical event data"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -144,6 +147,7 @@ func (h *HistoricalEventHandler) UpdateHistoricalEvent(c *gin.Context) {
 // @Produce     json
 // @Param       id     path     string                  true "Historical Event ID"
 // @Param       historicalEvent body     models.PatchHistoricalEventModel true "Patched historical event data"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -177,6 +181,7 @@ func (h *HistoricalEventHandler) PatchHistoricalEvent(c *gin.Context) {
 // @Accept      json
 // @Produce     json
 // @Param       id   path     string true "Historical Event ID"
+// @Security    ApiKeyAuth
 // @Success     202     {object} map[string]interface{}
 // @Failure     400     {object} map[string]interface{}
 // @Failure     500     {object} map[string]interface{}
@@ -206,6 +211,7 @@ func (h *HistoricalEventHandler) DeleteHistoricalEvent(c *gin.Context) {
 // @Param        category query    string false  "Filter by category"
 // @Param        start_date query string false  "Filter by start date (YYYY-MM-DD)"
 // @Param        end_date   query string false  "Filter by end date (YYYY-MM-DD)"
+// @Security    ApiKeyAuth
 // @Success     200     {object} timeline.GetAllHistoricalEventsResponse
 // @Failure     500     {object} map[string]interface{}
 // @Router      /v1/historical-events [get]

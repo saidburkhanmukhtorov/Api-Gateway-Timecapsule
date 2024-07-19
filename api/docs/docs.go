@@ -9,6 +9,7 @@ const docTemplate = `{
     "info": {
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
+        "termsOfService": "http://swagger.io/terms/",
         "contact": {},
         "version": "{{.Version}}"
     },
@@ -17,6 +18,11 @@ const docTemplate = `{
     "paths": {
         "/v1/comments": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Get a list of comments.",
                 "consumes": [
                     "application/json"
@@ -79,6 +85,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Create a new comment with the provided details.",
                 "consumes": [
                     "application/json"
@@ -128,6 +139,11 @@ const docTemplate = `{
         },
         "/v1/comments/{id}": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Get details of a comment by its ID.",
                 "consumes": [
                     "application/json"
@@ -179,6 +195,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update an existing comment.",
                 "consumes": [
                     "application/json"
@@ -233,6 +254,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a comment by its ID.",
                 "consumes": [
                     "application/json"
@@ -278,6 +304,11 @@ const docTemplate = `{
                 }
             },
             "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Partially update an existing comment.",
                 "consumes": [
                     "application/json"
@@ -334,6 +365,11 @@ const docTemplate = `{
         },
         "/v1/custom-events": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Get a list of custom events.",
                 "consumes": [
                     "application/json"
@@ -414,6 +450,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Create a new custom event with the provided details.",
                 "consumes": [
                     "application/json"
@@ -463,6 +504,11 @@ const docTemplate = `{
         },
         "/v1/custom-events/{id}": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Get details of a custom event by its ID.",
                 "consumes": [
                     "application/json"
@@ -514,6 +560,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update an existing custom event.",
                 "consumes": [
                     "application/json"
@@ -568,6 +619,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a custom event by its ID.",
                 "consumes": [
                     "application/json"
@@ -613,6 +669,11 @@ const docTemplate = `{
                 }
             },
             "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Partially update an existing custom event.",
                 "consumes": [
                     "application/json"
@@ -669,6 +730,11 @@ const docTemplate = `{
         },
         "/v1/historical-events": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Get a list of historical events.",
                 "consumes": [
                     "application/json"
@@ -737,6 +803,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Create a new historical event with the provided details.",
                 "consumes": [
                     "application/json"
@@ -786,6 +857,11 @@ const docTemplate = `{
         },
         "/v1/historical-events/{id}": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Get details of a historical event by its ID.",
                 "consumes": [
                     "application/json"
@@ -837,6 +913,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update an existing historical event.",
                 "consumes": [
                     "application/json"
@@ -891,6 +972,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a historical event by its ID.",
                 "consumes": [
                     "application/json"
@@ -936,6 +1022,11 @@ const docTemplate = `{
                 }
             },
             "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Partially update an existing historical event.",
                 "consumes": [
                     "application/json"
@@ -992,6 +1083,11 @@ const docTemplate = `{
         },
         "/v1/media": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Get a list of media.",
                 "consumes": [
                     "application/json"
@@ -1048,6 +1144,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Create new media with the provided details.",
                 "consumes": [
                     "application/json"
@@ -1097,6 +1198,11 @@ const docTemplate = `{
         },
         "/v1/media/{id}": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Get details of media by its ID.",
                 "consumes": [
                     "application/json"
@@ -1148,6 +1254,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update existing media.",
                 "consumes": [
                     "application/json"
@@ -1202,6 +1313,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete media by its ID.",
                 "consumes": [
                     "application/json"
@@ -1247,6 +1363,11 @@ const docTemplate = `{
                 }
             },
             "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Partially update existing media.",
                 "consumes": [
                     "application/json"
@@ -1303,6 +1424,11 @@ const docTemplate = `{
         },
         "/v1/memories": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Get a list of memories.",
                 "consumes": [
                     "application/json"
@@ -1413,6 +1539,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Create a new memory with the provided details.",
                 "consumes": [
                     "application/json"
@@ -1462,6 +1593,11 @@ const docTemplate = `{
         },
         "/v1/memories/{id}": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Get details of a memory by its ID.",
                 "consumes": [
                     "application/json"
@@ -1513,6 +1649,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update an existing memory.",
                 "consumes": [
                     "application/json"
@@ -1567,6 +1708,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a memory by its ID.",
                 "consumes": [
                     "application/json"
@@ -1612,6 +1758,11 @@ const docTemplate = `{
                 }
             },
             "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Partially update an existing memory.",
                 "consumes": [
                     "application/json"
@@ -1668,6 +1819,11 @@ const docTemplate = `{
         },
         "/v1/milestones": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Get a list of milestones.",
                 "consumes": [
                     "application/json"
@@ -1742,6 +1898,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Create a new milestone with the provided details.",
                 "consumes": [
                     "application/json"
@@ -1791,6 +1952,11 @@ const docTemplate = `{
         },
         "/v1/milestones/{id}": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Get details of a milestone by its ID.",
                 "consumes": [
                     "application/json"
@@ -1842,6 +2008,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update an existing milestone.",
                 "consumes": [
                     "application/json"
@@ -1896,6 +2067,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a milestone by its ID.",
                 "consumes": [
                     "application/json"
@@ -1941,6 +2117,11 @@ const docTemplate = `{
                 }
             },
             "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Partially update an existing milestone.",
                 "consumes": [
                     "application/json"
@@ -2690,20 +2871,29 @@ const docTemplate = `{
                 }
             }
         }
+    },
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "description": "Description for what is this security definition being used",
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
     }
 }`
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
-	Version:          "",
+	Version:          "1.0",
 	Host:             "",
 	BasePath:         "",
 	Schemes:          []string{},
-	Title:            "",
-	Description:      "",
+	Title:            "Swagger Example API",
+	Description:      "This is a sample server celler server.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
-	
+	// LeftDelim:        "{{",
+	// RightDelim:       "}}",
 }
 
 func init() {
